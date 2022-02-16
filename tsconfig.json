@@ -5,6 +5,7 @@
     "module": "CommonJS",
     "moduleResolution": "Node",
     "outDir": "dist",
+    "noImplicitAny": true,
     "esModuleInterop": true,
     "rootDir": "src",
     "watch": true,
