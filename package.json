@@ -1,0 +1,13 @@
+{
+  "name": "http-server",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon node ."
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.18",
+    "nodemon": "^2.0.15"
+  }
+}
