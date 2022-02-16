@@ -14,7 +14,7 @@ export default (async () => {
     },
     "/404": async (res: ServerResponse) => {
       const file = await readFile(`${basePath}/pages/404.html`);
-      res.writeHead(200, { "Content-Type": "text/html" });
+      res.writeHead(204, { "Content-Type": "text/html" });
       res.end(file);
     },
     "/style": async (res: ServerResponse) => {
