@@ -1,20 +1,20 @@
 (async () => {
   const http = await import("http");
-  const { default: r } = await import("./routes/index");
+  const { default: routes } = await import("./routes/index");
 
-  const routes = await r;
-
-  const server = http.createServer((req, res) => {
-    switch (req.url) {
-      case "/":
-        routes["/"](res);
-        break;
-      case "/styles/index.css":
-        routes["/style"](res);
-        break;
-      default:
-        routes["/404"](res);
-        break;
+  const server = http.createServer(async (req, res) => {
+    for await (const route of [routes]) {
+      switch (req.url) {
+        case "/":
+          route["/"](res);
+          break;
+        case "/styles/index.css":
+          route["/style"](res);
+          break;
+        default:
+          route["/404"](res);
+          break;
+      }
     }
   });
 
